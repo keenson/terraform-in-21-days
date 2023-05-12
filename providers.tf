@@ -5,10 +5,17 @@ terraform {
       version = "~> 4.0"
     }
   }
+  backend "s3" {
+    bucket         = "terraform-remote-state-keenson"
+    key            = "terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-remote-state"
+  }
 }
 
 # Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
 }
+
 
