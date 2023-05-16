@@ -74,7 +74,7 @@ resource "aws_instance" "private" {
   subnet_id              = data.terraform_remote_state.level1.outputs.private_subnet_id[count.index]
   user_data              = file("user-data.sh")
   tags = {
-    Name = "${var.env_code}-private"
+    Name = "${var.env_code}-private${count.index}"
   }
 }
 
