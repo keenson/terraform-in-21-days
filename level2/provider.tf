@@ -6,8 +6,8 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "terraform-remote-state-keenson"
-    key            = "terraform.tfstate"
+    bucket         = "terraform-remote-state-keenson1"
+    key            = "level2.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terraform-remote-state"
   }
